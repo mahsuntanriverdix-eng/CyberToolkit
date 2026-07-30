@@ -1,44 +1,47 @@
-from rich.console import Console
-from rich.panel import Panel
+from modules.password import generate_password
 
-console = Console()
 
 def show_menu():
-    console.clear()
+    print("\n===================================")
+    print("        CYBER TOOLKIT v0.2")
+    print("===================================")
+    print("1) Password Generator")
+    print("2) Network Tools (Yakında)")
+    print("3) Crypto Tools (Yakında)")
+    print("4) File Tools (Yakında)")
+    print("5) System Tools (Yakında)")
+    print("0) Çıkış")
+    print("===================================")
 
-    console.print(
-        Panel.fit(
-            "[bold cyan]CyberToolkit[/bold cyan]\n"
-            "[green]v0.1[/green]"
-        )
-    )
 
-    console.print("[1] Ağ Araçları")
-    console.print("[2] Kriptografi")
-    console.print("[3] Sistem Bilgisi")
-    console.print("[4] Dosya Araçları")
-    console.print("[0] Çıkış")
+def main():
+    while True:
+        show_menu()
 
-while True:
-    show_menu()
+        choice = input("Seçiminiz: ").strip()
 
-    secim = input("\nSeçiminiz: ")
+        if choice == "1":
+            generate_password()
 
-    if secim == "0":
-        console.print("\n[red]Program kapatılıyor...[/red]")
-        break
+        elif choice == "2":
+            print("\nBu modül henüz geliştirme aşamasında.")
 
-    elif secim == "1":
-        input("Ağ Araçları yakında eklenecek...")
+        elif choice == "3":
+            print("\nBu modül henüz geliştirme aşamasında.")
 
-    elif secim == "2":
-        input("Kriptografi modülü yakında eklenecek...")
+        elif choice == "4":
+            print("\nBu modül henüz geliştirme aşamasında.")
 
-    elif secim == "3":
-        input("Sistem Bilgisi yakında eklenecek...")
+        elif choice == "5":
+            print("\nBu modül henüz geliştirme aşamasında.")
 
-    elif secim == "4":
-        input("Dosya Araçları yakında eklenecek...")
+        elif choice == "0":
+            print("\nCyberToolkit kapatılıyor...")
+            break
 
-    else:
-        input("Geçersiz seçim!")
+        else:
+            print("\nGeçersiz seçim!")
+
+
+if __name__ == "__main__":
+    main()
